@@ -8,7 +8,7 @@ Long-running Python applications often combine threads and "asyncio". While Pyth
 
 This project was created to centralize that orchestration.
 
-Instead of scattering event loop creation, thread management, exception handling, shutdown logic, and task scheduling throughout an application, LoopWarden provides a small set of components that own those responsibilities.
+Instead of scattering event loop creation, thread management, exception handling, shutdown logic, and task scheduling throughout an application, Hermes provides a small set of components that own those responsibilities.
 
 The goal is simple:
 
