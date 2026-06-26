@@ -110,22 +110,28 @@ Hermes supports task deduplication by name to prevent accidentally spawning dupl
 
 ## Example
 ```
+# to view logs cleanly you can import my log.py file,
+or use the logging lib and set level to debug
+
+from thread_manager import ThreadManager
+from loop_manager import LoopManager
+
 tm = ThreadManager()
 lm = LoopManager()
 
-tm.start(lm.run_loop)
+tm.start(lm.run_loop) #start event loop thread
 
 lm.submit_task(
     "market-feed",
     websocket_consumer
-)
+) # name is required so each task can be differentiated from the others
 
 ...
 
 lm.submit_task(
     "shutdown",
     lm.stop
-)
+) # graceful shutdown
 
 tm.shutdown()
 ```
