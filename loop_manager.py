@@ -57,6 +57,7 @@ class LoopManager:
             return running_task   
         def worker():
             task = self.loop.create_task(coro(*args,**kwargs),name=name)
+            self.tasks[name] = task
             task.add_done_callback(
             self._handle_task_completion)
         self.loop.call_soon_threadsafe(
