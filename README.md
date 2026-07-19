@@ -135,6 +135,21 @@ lm.submit_task(
 
 tm.shutdown()
 ```
+
+## Update
+```
+hm = HermesManager()
+
+
+hm.start_event_loop()
+
+
+hm.add_task(fn, *args, **kwargs)
+
+hm.add_thread(fn, *args, **kwargs)
+
+hm.add_periodic_task(interval, callback, *args, **kwargs)
+```
 ---
 
 ## Why?
